@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>認可エラー / Authorization Error</title>
+</head>
+<body>
+  <h1 id="error-message">認可に失敗しました</h1>
+  
+  <script>
+    // ブラウザの言語設定を取得
+    var userLang = navigator.language || navigator.userLanguage;
+
+    // エラーメッセージを表示言語に応じて変更
+    if (userLang.startsWith('en')) {
+      document.getElementById('error-message').innerText = 'Authorization Failed';
+      document.documentElement.lang = 'en';
+    } else if (userLang.startsWith('ja')) {
+      document.getElementById('error-message').innerText = '認可に失敗しました';
+      document.documentElement.lang = 'ja';
+    } else {
+      // デフォルトの表示言語を設定
+      document.getElementById('error-message').innerText = 'Authorization Failed';
+      document.documentElement.lang = 'en';
+    }
+  </script>
+</body>
+</html>
